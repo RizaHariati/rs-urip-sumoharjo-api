@@ -1,11 +1,10 @@
 const express = require("express");
-const patientDataRouter = express.Router();
-
 const {
   getPatientData,
   updatePatientData,
   deletePatientData,
-} = require("../controller/patients");
+} = require("../controller/patientdata");
+const patientDataRouter = express.Router();
 
 patientDataRouter
   .route("/:id")
