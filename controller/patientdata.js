@@ -1,10 +1,6 @@
 const { StatusCodes } = require("http-status-codes");
-const {
-  BadRequestError,
-  UnauthenticatedError,
-  CustomAPIError,
-} = require("../error");
-const patient = require("../models/patient");
+const { UnauthenticatedError, CustomAPIError } = require("../error");
+const patient = require("../models/Patient");
 
 const getPatientData = async (req, res, next) => {
   const { patientID, name } = req.user;

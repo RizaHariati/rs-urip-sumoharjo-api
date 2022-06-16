@@ -4,7 +4,7 @@ const {
   UnauthenticatedError,
   CustomAPIError,
 } = require("../error");
-const patient = require("../models/patient");
+const patient = require("../models/Patient");
 
 const register = async (req, res, next) => {
   try {
