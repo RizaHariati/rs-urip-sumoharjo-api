@@ -1,0 +1,444 @@
+[
+  {
+    "nama": "M. Iqbal, Sp.A.",
+    "waktu": "pagi",
+    "poli": "Anak",
+    "hari": "Minggu",
+    "jam": "Pkl 09.00 s/d 10.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Murdoyo, Sp.A.",
+    "waktu": "Pagi",
+    "poli": "Anak",
+    "hari": "Minggu ke-1 dan ke-3",
+    "jam": "Pkl 09.00 s/d 10.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Surachman, Sp.A",
+    "waktu": "Sore",
+    "poli": "Anak",
+    "hari": "Senin , Kamis, Jum'at dan Sabtu",
+    "jam": "Pkl 18.00 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Nina Herlina, Sp.A.",
+    "waktu": "Sore",
+    "poli": "Anak",
+    "hari": "Senin s/d Jum'at",
+    "jam": "Pkl 16.00 s/d 18.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Syahrifil Syahar, Sp.B.",
+    "waktu": "Pagi",
+    "poli": "Bedah",
+    "hari": "Minggu",
+    "jam": "Pkl 11.00 s/d 12.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Bintang Siregar, Sp.B Onk",
+    "waktu": "Pagi",
+    "poli": "Bedah",
+    "hari": "Rabu",
+    "jam": "Pkl 08:00 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Deasiana Paksi Moeda , Sp. B",
+    "waktu": "Sore",
+    "poli": "Bedah",
+    "hari": "Sabtu",
+    "jam": "Pkl 15.30 WIB s/d Selesai",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Tofik Rahmanto,Sp.B",
+    "waktu": "Siang",
+    "poli": "Bedah",
+    "hari": "Sabtu",
+    "jam": "Pkl 13.00 s/d 15.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "M. Agusni, Sp.B.",
+    "waktu": "Pagi",
+    "poli": "Bedah",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Pkl 09.00 WIB s/d selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Yuzar Harun, Sp.B.",
+    "waktu": "Sore",
+    "poli": "Bedah",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Oncall",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Agus Salim, Sp.BM",
+    "waktu": "Sore",
+    "poli": "Bedah Mulut",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Pkl 16.00 WIB s/d Selesai on Call",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Adyananto, Sp.BS.",
+    "waktu": "Pagi",
+    "poli": "Bedah Syaraf",
+    "hari": "Rabu dan Kamis",
+    "jam": "Pkl 09.00 s/d 11.00 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "M. Yunus, Sp.BS.",
+    "waktu": "Siang",
+    "poli": "Bedah Syaraf",
+    "hari": "Senin dan Selasa",
+    "jam": "Pkl 13.00 WIB s/d selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Dewi Nur Fiana, Sp.KFR",
+    "waktu": "Sore",
+    "poli": "Fisik dan Rehabilitasi",
+    "hari": "Senin, Rabu dan Jum'at",
+    "jam": "14.00 sd 16.30 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Riana Handayani, SP.JP FIHA",
+    "waktu": "Siang",
+    "poli": "Jantung dan Pembuluh Darah",
+    "hari": "Senin, Rabu dan Jumat",
+    "jam": "Pkl 14.00 s/d 16.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Asrizal, Sp JP",
+    "waktu": "Pagi",
+    "poli": "Jantung dan Pembuluh Darah",
+    "hari": "Senin, Selasa, Rabu, Kamis dan Sabtu",
+    "jam": "Pkl 09:00 s/d 11:30 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Azman Roni, Sp.OG.",
+    "waktu": "Pagi",
+    "poli": "Kandungan",
+    "hari": "Minggu",
+    "jam": "Pkl 10.00 s/d 12.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Taufiqurrahman R, SP.OG",
+    "waktu": "Pagi",
+    "poli": "Kandungan",
+    "hari": "Rabu dan Jumat",
+    "jam": "Pkl 09.00 s/d 11.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Arif Effendi, Sp.KK",
+    "waktu": "Sore",
+    "poli": "Kulit Kelamin",
+    "hari": "Selasa, Kamis, dan Sabtu",
+    "jam": "Pkl 16.00 s/d 18.30 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Yulisna, Sp.KK",
+    "waktu": "Sore",
+    "poli": "Kulit Kelamin",
+    "hari": "Senin, Rabu dan Jum'at",
+    "jam": "Pkl 16.00 s/d 18.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Dino Rinaldi, Sp.OG Onk",
+    "waktu": "Siang",
+    "poli": "Onkologi",
+    "hari": "Jum'at",
+    "jam": "Pkl 14.00 s/d Selesai WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Rachmadi, Sp.B Onk",
+    "waktu": "Siang",
+    "poli": "Onkologi",
+    "hari": "Senin",
+    "jam": "Pkl 14.00 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Bayu, Sp. OT",
+    "waktu": "pagi",
+    "poli": "Ortopedi",
+    "hari": "Minggu",
+    "jam": "Pkl 08.00 s/d 10.00 WIB ",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Ahmad Fauzi, Sp.OT",
+    "waktu": "Sore",
+    "poli": "Ortopedi",
+    "hari": "Senin, Rabu dan Jumat",
+    "jam": "Pkl 15:30 s/d 17:00 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Rizki Hanriko, Sp. PA",
+    "waktu": "siang",
+    "poli": "Patologi Anatomi",
+    "hari": "Sabtu",
+    "jam": "on call",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Ade Yonata,Sp.PD-KGH",
+    "waktu": "Sore",
+    "poli": "Penyakit Dalam",
+    "hari": "Jumat",
+    "jam": "Pkl 16.00 WIB s/d selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Imron, Sp.PD.",
+    "waktu": "Sore",
+    "poli": "Penyakit Dalam",
+    "hari": "Jumat & Sabtu",
+    "jam": "18.00 s/d 20.00 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Marina, Sp.PD.",
+    "waktu": "pagi",
+    "poli": "Penyakit Dalam",
+    "hari": "Minggu",
+    "jam": "Pkl 11.00 s/d 12.00 WIB",
+    "gender": 0,
+    "on_call": 1
+  },
+  {
+    "nama": "Juspeni Kartika,Sp.PD-KHOM",
+    "waktu": "Siang",
+    "poli": "Penyakit Dalam",
+    "hari": "Selasa, Kamis dan Jum'at",
+    "jam": "Pkl 14.00 WIB s/d Selesai",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Ridhuan Irawan, Sp.PD.",
+    "waktu": "Pagi",
+    "poli": "Penyakit Dalam",
+    "hari": "Senin & Kamis (BPJS)",
+    "jam": "Pkl 10.00 s/d 12.00 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Hasmi Maha, Sp.PD.",
+    "waktu": "Sore",
+    "poli": "Penyakit Dalam",
+    "hari": "Senin s/d Kamis",
+    "jam": "Pkl 18.00 s/d 20.00",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Farida Oktarina,SP.M",
+    "waktu": "Siang",
+    "poli": "Penyakit Mata",
+    "hari": "Selasa, Kamis dan Jum'at",
+    "jam": "Pkl 14.00 s/d 17.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Helmi Muchtar, Sp.M.",
+    "waktu": "Sore",
+    "poli": "Penyakit Mata",
+    "hari": "Selasa, Kamis dan Sabtu",
+    "jam": "Pkl 16.30 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+
+  {
+    "nama": "Aryanti Ibrahim, Sp.M.",
+    "waktu": "Sore",
+    "poli": "Penyakit Mata",
+    "hari": "Senin, Rabu dan Jumat",
+    "jam": "Pkl 18.00 WIB s/d Selesai",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Adhari , Sp.P",
+    "waktu": "Siang",
+    "poli": "Penyakit Paru",
+    "hari": "Rabu (BPJS)",
+    "jam": "Pkl 13.00 s/d 15.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Pad Dilangga, Sp.P.",
+    "waktu": "Sore",
+    "poli": "Penyakit Paru",
+    "hari": "Selasa dan Kamis",
+    "jam": "14.30 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Nina Marlina, Sp.P.",
+    "waktu": "Siang",
+    "poli": "Penyakit Paru",
+    "hari": "Senin dan Jumat",
+    "jam": "Pkl 14.00 s/d 16.00 WIB",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Sanjoto Santibudi, Sp.RM",
+    "waktu": "Pagi",
+    "poli": "Rehabilitasi Medis",
+    "hari": "Sabtu",
+    "jam": "Pkl 10.00 s/d 11.30 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "RA. Neilan Amroisa, Sp.S.,M.Kes.",
+    "waktu": "Sore",
+    "poli": "Syaraf",
+    "hari": "Senin, Rabu, Jum'at",
+    "jam": "Pkl 14.30 WIB s/d Selesai",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Suharsono, Sp.S.,M.Kes.",
+    "waktu": "Pagi",
+    "poli": "Syaraf",
+    "hari": "Senin s/d Sabtu",
+    "jam": "10.00 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Khairani, Sp.THT",
+    "waktu": "Pagi",
+    "poli": "Telinga Hidung Tenggorokan",
+    "hari": "Minggu",
+    "jam": "Pkl 09.00 s/d 10.30 WIB",
+    "gender": 0,
+    "on_call": 1
+  },
+  {
+    "nama": "Hanggoro, Sp.THT",
+    "waktu": "Sore",
+    "poli": "Telinga Hidung Tenggorokan",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Pkl 17.30 s/d 20:00 WIB",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Yaya Hadinata, Sp.U",
+    "waktu": "Pagi",
+    "poli": "Urologi",
+    "hari": "Minggu",
+    "jam": "Pkl 10.00 s/d 12.00 WIB",
+    "gender": 1,
+    "on_call": 1
+  },
+  {
+    "nama": "Mars Dwi Cahyo, Sp.U",
+    "waktu": "Sore",
+    "poli": "Urologi",
+    "hari": "Selasa & Jum'at",
+    "jam": "Pkl 15.30 WIB s/d Selesai",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Ikrizal, Sp.U",
+    "waktu": "Sore",
+    "poli": "Urologi",
+    "hari": "Senin Rabu, Kamis dan Sabtu",
+    "jam": "Pkl 17.00 s/d 19.00",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Mamie Wahdi, Sp.U",
+    "waktu": "Sore",
+    "poli": "Umum",
+    "hari": "Senin Rabu, Kamis dan Sabtu",
+    "jam": "Pkl 17.00 s/d 19.00",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Conny Widiyanti, Med.Cos",
+    "waktu": "Sore",
+    "poli": "Umum",
+    "hari": "Selasa, Rabu, Kamis dan Sabtu",
+    "jam": "Pkl 17.00 s/d 19.00",
+    "gender": 0,
+    "on_call": 0
+  },
+  {
+    "nama": "Ferry Ferdian Nugraha",
+    "waktu": "Pagi",
+    "poli": "Umum",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Pkl 10.00 s/d 19.00",
+    "gender": 1,
+    "on_call": 0
+  },
+  {
+    "nama": "Nunik Wulandari, Med.Cos",
+    "waktu": "Pagi",
+    "poli": "Umum",
+    "hari": "Senin s/d Sabtu",
+    "jam": "Pkl 10.00 s/d selesai",
+    "gender": 0,
+    "on_call": 0
+  }
+]

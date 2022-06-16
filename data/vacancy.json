@@ -1,0 +1,84 @@
+[
+  {
+    "title": "Presiden Direktur Rumah Sakit",
+    "tanggal": "5-Sep-21",
+    "pengalaman": 5,
+    "kualifikasi": [
+      "Pendidikan minimal Dokter Spesialis",
+      "Menguasai semua regulasi di bidang Perumahsakitan yang berlaku",
+      "Memiliki kemampuan mengelola Rumah Sakit, meliputi pengelolaan SDM, Keuangan, dan Mutu Rumah Sakit",
+      "Menguasai SIM Rumah Sakit",
+      "Memiliki jiwa kepemimpinan yang baik"
+    ]
+  },
+  {
+    "title": "Apoteker untuk Staf Pembelian",
+    "tanggal": "7-Sep-21",
+    "pengalaman": 1,
+    "kualifikasi": [
+      "Apoteker",
+      "Pengalaman di posisi yang sama minimal 1 tahun lebih disukai",
+      "Baik dalam berkomunikasi",
+      "Jujur, tegas, dan memiliki jiwa kepemimpinan serta kerja tim"
+    ]
+  },
+  {
+    "title": "Elektromedis",
+    "tanggal": "7-Sep-21",
+    "pengalaman": 1,
+    "kualifikasi": [
+      "Pindidikan minimal D3/S1 Teknik Elektromedik dari universitas yang terkemuka dengan akreditasi minimal B",
+      "Harus Memiliki STR (Surat Tanda Registrasi Tenaga Kesehatan)",
+      "Menguasai spesifikasi dan teknis alat – alat kesehatan di Rumah sakit",
+      "Memiliki pengalaman dalam menangani proses penerimaan, penyimpanan, dan distribusi alat kesehatan sesuai prosedur",
+      "Memiliki pengalaman dalam mempersiapkan dokumen administratif dan beserta pengurusan ijin alat medis"
+    ]
+  },
+  {
+    "title": "Analis Laboratorium ",
+    "tanggal": "3-Sep-21",
+    "pengalaman": 2,
+    "kualifikasi": [
+      "Pendidikan D3 Analis Kesehatan",
+      "Memiliki sertifikat Phlebotomy khususnya penggunaan vacutainer",
+      "Memiliki STR (Surat Tanda Registrasi) yang masih berlaku",
+      "Memiliki pengalaman sebagai Analis Lab di Rumah Sakit 2 - 3 tahun sebagai penanggung jawab shift",
+      "Bersedia bekerja dengan sistem shift"
+    ]
+  },
+  {
+    "title": "Radiografer ",
+    "tanggal": "4-Sep-21",
+    "pengalaman": 2,
+    "kualifikasi": [
+      "Pendidikan Minimal D3/D4 Teknik Radiodiagnostik",
+      "Memiliki STR aktif",
+      "Memiliki sertifikat PPR (lebih diutamakan)",
+      "Memiliki Pengalaman Sebagai Radiografer min.2 Tahun di Rumah Sakit",
+      "Mampu mengoperasikan MRI dan CT Scan"
+    ]
+  },
+  {
+    "title": "Dokter Umum ",
+    "tanggal": "3-Sep-21",
+    "pengalaman": 0,
+    "kualifikasi": [
+      "Pendidikan minimal S1 Profesi Dokter.",
+      "Memiliki STR aktif",
+      "Memiliki STR yang aktif berlaku.",
+      "Memiliki sertifikasi ACLS dan ATLS.",
+      "Siap bekerja shifting."
+    ]
+  },
+  {
+    "title": "Human Capital Department Head ",
+    "tanggal": "2-Sep-21",
+    "pengalaman": 5,
+    "kualifikasi": [
+      "Sebagai business partner, berkontribusi dalam proses pengambilan keputusan",
+      "Bertanggung jawab terhadap keseluruhan proses Human Capital mencakup perencanaan tenaga kerja, perekrutan, engagement, pengembangan, manajemen kinerja, pembinaan, succession plan, manajemen konflik",
+      "Mengawasi operasional Human Capital termasuk aktivitas keseharian serta kepatuhan (compliance) terhadap kebijakan atau regulasi yang berlaku",
+      "Memiliki sertifikasi ACLS dan ATLS."
+    ]
+  }
+]
