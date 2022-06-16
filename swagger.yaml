@@ -1,0 +1,658 @@
+openapi: 3.0.0
+info:
+  title: RS Urip Sumoharjo API
+  contact: {}
+  version: "1.0"
+servers:
+  - url: https://rs-urip-sumoharjo-api.herokuapp.com/api/v1
+    variables: {}
+paths:
+  /admin/login:
+    post:
+      tags:
+        - Admin
+      summary: Login Admin
+      operationId: LoginAdmin
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginAdminRequest"
+            example:
+              email: john@yahoo.com
+              password: healthy
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /admin/register:
+    post:
+      tags:
+        - Admin
+      summary: Register Admin
+      operationId: RegisterAdmin
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterAdminRequest"
+            example:
+              name: John Windell
+              email: john@yahoo.com
+              password: healthy
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /doctor/{id}:
+    get:
+      tags:
+        - Doctors
+      summary: Get Doctor Static
+      operationId: GetDoctorStatic
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+    delete:
+      tags:
+        - Doctors
+      summary: Delete doctor
+      operationId: Deletedoctor
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - Doctors
+      summary: Update Doctor
+      operationId: UpdateDoctor
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateDoctorRequest"
+            example:
+              waktu: pagi
+              hari: Minggu
+              jam: Pkl 09.00 WIB
+              on_call: 1
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /doctor:
+    post:
+      tags:
+        - Doctors
+      summary: Add Doctor
+      operationId: AddDoctor
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddDoctorRequest"
+            example:
+              nama: dr.John
+              waktu: sore
+              poli: Anak
+              hari: Minggu ke-1 dan ke-3
+              jam: Pkl 09.00 s/d 10.00 WIB
+              gender: 1
+              on_call: 1
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /doctor/:
+    get:
+      tags:
+        - Doctors
+      summary: Get Doctors
+      description: Finding a doctor with 'nama' keyword and/or 'poli' keyword
+      operationId: GetDoctors
+      parameters:
+        - in: query
+          name: nama
+          schema:
+            type: string
+          description: Tulis nama dokter
+        - in: query
+          name: poli
+          schema:
+            type: string
+          description: Tulis nama poli yang dituju
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /vacancy/{id}:
+    get:
+      tags:
+        - Vacancy
+      summary: Get Vacancy
+      operationId: GetVacancy
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - Vacancy
+      summary: Update Vacancy
+      operationId: UpdateVacancy
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateVacancyRequest"
+            example:
+              title: Perawat gigi
+              pengalaman: 2
+              kualifikasi:
+                - Pria
+                - Pernah bekerja di klinik gigi sebagai perawat gigi
+                - Minimal lulusan smk/sma
+                - Untuk melakukan asistensi dokter gigi
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    delete:
+      tags:
+        - Vacancy
+      summary: Delete Vacancy
+      operationId: DeleteVacancy
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /vacancy:
+    post:
+      tags:
+        - Vacancy
+      summary: Add Vacancy
+      operationId: AddVacancy
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AddVacancyRequest"
+            example:
+              title: Perawat gigi
+              pengalaman: 1
+              kualifikasi:
+                - Wanita
+                - Pernah bekerja di klinik gigi sebagai perawat gigi
+                - Minimal lulusan smk/sma
+                - Untuk melakukan asistensi dokter gigi
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    get:
+      tags:
+        - Vacancy
+      summary: Get All Vacancy
+      operationId: GetAllVacancy
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /patient/login:
+    post:
+      tags:
+        - Patient Authorization
+      summary: Login Patient
+      operationId: LoginPatient
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginPatientRequest"
+            example:
+              email: John@yahoo.com
+              password: patient
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /patient/register:
+    post:
+      tags:
+        - Patient Authorization
+      summary: Register Patient
+      operationId: RegisterPatient
+      parameters: []
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterPatientRequest"
+            example:
+              name: John Windell
+              email: john@yahoo.com
+              password: patient
+              gender: 1
+              age: 45
+              address: Jl. Simply Healthy No.5
+              phone: 2342332
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+  /patientdata/{id}:
+    delete:
+      tags:
+        - Patient Data
+      summary: Delete Patient Data
+      operationId: DeletePatientData
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - Patient Data
+      summary: Update Patient Data
+      operationId: UpdatePatientData
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdatePatientDataRequest"
+            example:
+              password: patient
+              address: Jl. Simply Healthy No.5
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    get:
+      tags:
+        - Patient Data
+      summary: Patient Data
+      operationId: PatientData
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: "null"
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+components:
+  schemas:
+    LoginAdminRequest:
+      title: LoginAdminRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: John@yahoo.com
+        password: healthy
+    RegisterAdminRequest:
+      title: RegisterAdminRequest
+      required:
+        - name
+        - email
+        - password
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        name: John Windell
+        email: John@yahoo.com
+        password: healthy
+    AddDoctorRequest:
+      title: AddDoctorRequest
+      required:
+        - nama
+        - waktu
+        - poli
+        - hari
+        - jam
+        - gender
+        - on_call
+      type: object
+      properties:
+        nama:
+          type: string
+        waktu:
+          type: string
+        poli:
+          type: string
+        hari:
+          type: string
+        jam:
+          type: string
+        gender:
+          type: integer
+          format: int32
+        on_call:
+          type: integer
+          format: int32
+      example:
+        nama: dr.John Windell
+        waktu: sore
+        poli: Anak
+        hari: Minggu ke-1 dan ke-3
+        jam: Pkl 09.00 s/d 10.00 WIB
+        gender: 1
+        on_call: 1
+    UpdateDoctorRequest:
+      title: UpdateDoctorRequest
+      required:
+        - waktu
+        - hari
+        - jam
+        - on_call
+      type: object
+      properties:
+        waktu:
+          type: string
+        hari:
+          type: string
+        jam:
+          type: string
+        on_call:
+          type: integer
+          format: int32
+      example:
+        waktu: pagi
+        hari: Minggu
+        jam: Pkl 09.00 WIB
+        on_call: 1
+    AddVacancyRequest:
+      title: AddVacancyRequest
+      required:
+        - title
+        - pengalaman
+        - kualifikasi
+      type: object
+      properties:
+        title:
+          type: string
+        pengalaman:
+          type: integer
+          format: int32
+        kualifikasi:
+          type: array
+          items:
+            type: string
+          description: ""
+      example:
+        title: Perawat gigi
+        pengalaman: 1
+        kualifikasi:
+          - Wanita
+          - Pernah bekerja di klinik gigi sebagai perawat gigi
+          - Minimal lulusan smk/sma
+          - Untuk melakukan asistensi dokter gigi
+    UpdateVacancyRequest:
+      title: UpdateVacancyRequest
+      required:
+        - title
+        - pengalaman
+        - kualifikasi
+      type: object
+      properties:
+        title:
+          type: string
+        pengalaman:
+          type: integer
+          format: int32
+        kualifikasi:
+          type: array
+          items:
+            type: string
+          description: ""
+      example:
+        title: Perawat gigi
+        pengalaman: 2
+        kualifikasi:
+          - Pria
+          - Pernah bekerja di klinik gigi sebagai perawat gigi
+          - Minimal lulusan smk/sma
+          - Untuk melakukan asistensi dokter gigi
+    LoginPatientRequest:
+      title: LoginPatientRequest
+      required:
+        - email
+        - password
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      example:
+        email: John@yahoo.com
+        password: patient
+    RegisterPatientRequest:
+      title: RegisterPatientRequest
+      required:
+        - name
+        - email
+        - password
+        - gender
+        - age
+        - address
+        - phone
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        gender:
+          type: integer
+          format: int32
+        age:
+          type: integer
+          format: int32
+        address:
+          type: string
+        phone:
+          type: integer
+          format: int32
+      example:
+        name: John windell
+        email: John@yahoo.com
+        password: patient
+        gender: 0
+        age: 42
+        address: Jl. Simply Healthy No 5
+        phone: 2342332
+    UpdatePatientDataRequest:
+      title: UpdatePatientDataRequest
+      required:
+        - password
+        - address
+      type: object
+      properties:
+        password:
+          type: string
+        address:
+          type: string
+      example:
+        password: patient
+        address: Jl. Simply Healthy No.5
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security: []
+tags:
+  - name: Misc
+    description: ""
+  - name: Admin
+    description: ""
+  - name: Doctors
+    description: ""
+  - name: Vacancy
+    description: ""
+  - name: Patient Authorization
+    description: ""
+  - name: Patient Data
+    description: ""

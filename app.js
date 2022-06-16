@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./db/connect");
+const path = require("path");
 
 const patientDataRouter = require("./routes/patientdata");
 const patientRouter = require("./routes/patients");
@@ -18,6 +19,12 @@ const cors = require("cors");
 const xss = require("xss-clean");
 const rateLimiter = require("express-rate-limit");
 
+/* ---------------------------- swagger --------------------------- */
+const swaggerUI = require("swagger-ui-express");
+const YAML = require("yamljs");
+const swaggerDocument = YAML.load("./swagger.yaml");
+/* ---------------------------- swagger --------------------------- */
+
 const app = express();
 // require("./populate");
 app.use(express.json());
@@ -33,10 +40,12 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 /* --------------------------- security --------------------------- */
+app.use(express.static("public"));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./public/index.html"));
+// });
 
-app.get("/", (req, res) => {
-  res.send("<h1>WELCOME TO RS URIP SUMOHARJO API</h1>");
-});
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 app.use("/api/v1/patient", patientRouter);
 app.use("/api/v1/patientdata", authenticationMiddleware, patientDataRouter);
