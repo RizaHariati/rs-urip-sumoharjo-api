@@ -50,8 +50,8 @@ app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 app.use("/api/v1/patient", patientRouter);
 app.use("/api/v1/patientdata", authenticationMiddleware, patientDataRouter);
 app.use("/api/v1/admin", adminrouter);
-app.use("/api/v1/doctor", adminAuthentificationMiddleware, doctorroute);
-app.use("/api/v1/vacancy", adminAuthentificationMiddleware, vacancyRoute);
+app.use("/api/v1/doctors", doctorroute);
+app.use("/api/v1/jobs", vacancyRoute);
 
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);

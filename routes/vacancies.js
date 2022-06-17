@@ -7,12 +7,13 @@ const {
   updateVacancy,
   deleteVacancy,
 } = require("../controller/vacancies");
+const adminAuthentificationMiddleware = require("../middlewares/adminauthentification");
 
-vacancyRoute.route("/").get(getAllVacancy).post(createVacancy);
-vacancyRoute
-  .route("/:id")
-  .get(getVacancy)
-  .patch(updateVacancy)
-  .delete(deleteVacancy);
+vacancyRoute.get("/", getAllVacancy);
+vacancyRoute.get("/:id", getVacancy);
+
+vacancyRoute.use("/admin", adminAuthentificationMiddleware);
+vacancyRoute.post("/admin/", createVacancy);
+vacancyRoute.route("/admin/:id").patch(updateVacancy).delete(deleteVacancy);
 
 module.exports = vacancyRoute;

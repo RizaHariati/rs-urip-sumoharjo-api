@@ -29,7 +29,6 @@ const getVacancy = async (req, res, next) => {
 };
 
 const updateVacancy = async (req, res, next) => {
-  console.log(req.body);
   const { id: vacancyID } = req.params;
   const vacancy = await Vacancy.findByIdAndUpdate(
     { _id: vacancyID },

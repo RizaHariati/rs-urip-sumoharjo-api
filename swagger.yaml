@@ -10,8 +10,9 @@ paths:
   /admin/login:
     post:
       tags:
-        - Admin
+        - Administration
       summary: Login Admin
+      description: Login for Hospital Administrator
       operationId: LoginAdmin
       parameters: []
       requestBody:
@@ -21,8 +22,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginAdminRequest"
             example:
-              email: john@yahoo.com
-              password: healthy
+              email: samuel@yahoo.com
+              password: secret
         required: true
       responses:
         "200":
@@ -33,8 +34,9 @@ paths:
   /admin/register:
     post:
       tags:
-        - Admin
+        - Administration
       summary: Register Admin
+      description: Registration for Administrator
       operationId: RegisterAdmin
       parameters: []
       requestBody:
@@ -44,9 +46,9 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterAdminRequest"
             example:
-              name: John Windell
-              email: john@yahoo.com
-              password: healthy
+              name: Samual Jackson
+              email: samuel@yahoo.com
+              password: secret
         required: true
       responses:
         "200":
@@ -54,12 +56,13 @@ paths:
           headers: {}
       deprecated: false
       security: []
-  /doctor/{id}:
+  /doctors/{id}:
     get:
       tags:
-        - Doctors
-      summary: Get Doctor Static
-      operationId: GetDoctorStatic
+        - Doctor
+      summary: Get Doctor
+      description: Get doctor by ID
+      operationId: GetDoctor
       parameters:
         - name: id
           in: path
@@ -68,16 +71,18 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
           headers: {}
       deprecated: false
+      security: []
+  /doctors/admin/{id}:
     delete:
       tags:
-        - Doctors
+        - Doctor
       summary: Delete doctor
+      description: Delete doctor by Id
       operationId: Deletedoctor
       parameters:
         - name: id
@@ -87,7 +92,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
@@ -97,8 +101,9 @@ paths:
         - bearer: []
     patch:
       tags:
-        - Doctors
+        - Doctor
       summary: Update Doctor
+      description: Update Doctor schedule. Administrator only
       operationId: UpdateDoctor
       parameters:
         - name: id
@@ -108,7 +113,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       requestBody:
         description: ""
         content:
@@ -116,10 +120,12 @@ paths:
             schema:
               $ref: "#/components/schemas/UpdateDoctorRequest"
             example:
-              waktu: pagi
-              hari: Minggu
-              jam: Pkl 09.00 WIB
-              on_call: 1
+              waktu: sore
+              poli: Kulit Kelamin
+              hari: Senin, Rabu dan Jum'at
+              jam: Pkl 16.00 s/d 18.00 WIB
+              gender: false
+              on_call: false
         required: true
       responses:
         "200":
@@ -128,11 +134,12 @@ paths:
       deprecated: false
       security:
         - bearer: []
-  /doctor:
+  /doctors/admin:
     post:
       tags:
-        - Doctors
+        - Doctor
       summary: Add Doctor
+      description: Add new doctor. Administrator only.
       operationId: AddDoctor
       parameters: []
       requestBody:
@@ -142,10 +149,10 @@ paths:
             schema:
               $ref: "#/components/schemas/AddDoctorRequest"
             example:
-              nama: dr.John
-              waktu: sore
-              poli: Anak
-              hari: Minggu ke-1 dan ke-3
+              nama: dr.Samuel Jackson
+              waktu: pagi
+              poli: Umum
+              hari: Minggu ke-2 dan ke-4
               jam: Pkl 09.00 s/d 10.00 WIB
               gender: 1
               on_call: 1
@@ -157,37 +164,37 @@ paths:
       deprecated: false
       security:
         - bearer: []
-  /doctor/:
+  /doctors:
     get:
       tags:
-        - Doctors
-      summary: Get Doctors
-      description: Finding a doctor with 'nama' keyword and/or 'poli' keyword
-      operationId: GetDoctors
+        - Doctor
+      summary: Search Doctor
+      description: Search doctor using 'nama' keyword or 'poli' keyword
+      operationId: SearchDoctor
       parameters:
         - in: query
           name: nama
           schema:
             type: string
-          description: Tulis nama dokter
+          description: Mencari dokter berdasarkan nama
         - in: query
           name: poli
           schema:
             type: string
-          description: Tulis nama poli yang dituju
+          description: Mencari dokter berdasarkan poli yang dituju
       responses:
         "200":
           description: ""
           headers: {}
       deprecated: false
-      security:
-        - bearer: []
-  /vacancy/{id}:
+      security: []
+  /jobs/{id}:
     get:
       tags:
-        - Vacancy
-      summary: Get Vacancy
-      operationId: GetVacancy
+        - Job
+      summary: Get Single Job
+      description: Showing single job by id
+      operationId: GetSingleJob
       parameters:
         - name: id
           in: path
@@ -196,34 +203,63 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
           headers: {}
       deprecated: false
-      security:
-        - bearer: []
-    patch:
+      security: []
+  /jobs/admin:
+    post:
       tags:
-        - Vacancy
-      summary: Update Vacancy
-      operationId: UpdateVacancy
-      parameters:
-        - name: id
-          in: path
-          description: ""
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: "null"
+        - Job
+      summary: Add Job
+      description: Add new job. Administrator only
+      operationId: AddJob
+      parameters: []
       requestBody:
         description: ""
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/UpdateVacancyRequest"
+              $ref: "#/components/schemas/AddJobRequest"
+            example:
+              title: Perawat gigi
+              pengalaman: 1
+              kualifikasi:
+                - Wanita
+                - Pernah bekerja di klinik gigi sebagai perawat gigi
+                - Minimal lulusan smk/sma
+                - Untuk melakukan asistensi dokter gigi
+        required: true
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /jobs/admin/{id}:
+    patch:
+      tags:
+        - Job
+      summary: Update Job
+      description: Update Job data. Administrator only
+      operationId: UpdateJob
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        description: ""
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateJobRequest"
             example:
               title: Perawat gigi
               pengalaman: 2
@@ -242,9 +278,10 @@ paths:
         - bearer: []
     delete:
       tags:
-        - Vacancy
-      summary: Delete Vacancy
-      operationId: DeleteVacancy
+        - Job
+      summary: Delete Job
+      description: Delete Job. Administrator only
+      operationId: DeleteJob
       parameters:
         - name: id
           in: path
@@ -253,7 +290,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
@@ -261,53 +297,26 @@ paths:
       deprecated: false
       security:
         - bearer: []
-  /vacancy:
-    post:
-      tags:
-        - Vacancy
-      summary: Add Vacancy
-      operationId: AddVacancy
-      parameters: []
-      requestBody:
-        description: ""
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/AddVacancyRequest"
-            example:
-              title: Perawat gigi
-              pengalaman: 1
-              kualifikasi:
-                - Wanita
-                - Pernah bekerja di klinik gigi sebagai perawat gigi
-                - Minimal lulusan smk/sma
-                - Untuk melakukan asistensi dokter gigi
-        required: true
-      responses:
-        "200":
-          description: ""
-          headers: {}
-      deprecated: false
-      security:
-        - bearer: []
+  /jobs:
     get:
       tags:
-        - Vacancy
-      summary: Get All Vacancy
-      operationId: GetAllVacancy
+        - Job
+      summary: Get All Jobs
+      description: Get all Job Vacancy available
+      operationId: GetAllJobs
       parameters: []
       responses:
         "200":
           description: ""
           headers: {}
       deprecated: false
-      security:
-        - bearer: []
+      security: []
   /patient/login:
     post:
       tags:
-        - Patient Authorization
+        - Patient
       summary: Login Patient
+      description: Patient Login
       operationId: LoginPatient
       parameters: []
       requestBody:
@@ -317,8 +326,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginPatientRequest"
             example:
-              email: John@yahoo.com
-              password: patient
+              email: samuel@gmail.com
+              password: secret
         required: true
       responses:
         "200":
@@ -329,8 +338,9 @@ paths:
   /patient/register:
     post:
       tags:
-        - Patient Authorization
+        - Patient
       summary: Register Patient
+      description: Patient Registration
       operationId: RegisterPatient
       parameters: []
       requestBody:
@@ -340,12 +350,12 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterPatientRequest"
             example:
-              name: John Windell
-              email: john@yahoo.com
-              password: patient
-              gender: 1
-              age: 45
-              address: Jl. Simply Healthy No.5
+              name: Samuel Jackson
+              email: samuel@gmail.com
+              password: secret
+              gender: 0
+              age: 42
+              address: Jl. Way Sekampung no 6
               phone: 2342332
         required: true
       responses:
@@ -357,8 +367,9 @@ paths:
   /patientdata/{id}:
     delete:
       tags:
-        - Patient Data
+        - Patient
       summary: Delete Patient Data
+      description: Delete Patient, required patient login
       operationId: DeletePatientData
       parameters:
         - name: id
@@ -368,7 +379,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
@@ -378,8 +388,9 @@ paths:
         - bearer: []
     patch:
       tags:
-        - Patient Data
+        - Patient
       summary: Update Patient Data
+      description: Update current address or phone, require patient login
       operationId: UpdatePatientData
       parameters:
         - name: id
@@ -389,7 +400,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       requestBody:
         description: ""
         content:
@@ -397,8 +407,8 @@ paths:
             schema:
               $ref: "#/components/schemas/UpdatePatientDataRequest"
             example:
-              password: patient
-              address: Jl. Simply Healthy No.5
+              address: Jl. Way Sekampung 95
+              phone: 345829
         required: true
       responses:
         "200":
@@ -409,8 +419,9 @@ paths:
         - bearer: []
     get:
       tags:
-        - Patient Data
+        - Patient
       summary: Patient Data
+      description: Get single patient Data, require patient login
       operationId: PatientData
       parameters:
         - name: id
@@ -420,7 +431,6 @@ paths:
           style: simple
           schema:
             type: string
-            example: "null"
       responses:
         "200":
           description: ""
@@ -442,8 +452,8 @@ components:
         password:
           type: string
       example:
-        email: John@yahoo.com
-        password: healthy
+        email: samuel@yahoo.com
+        password: secret
     RegisterAdminRequest:
       title: RegisterAdminRequest
       required:
@@ -459,9 +469,9 @@ components:
         password:
           type: string
       example:
-        name: John Windell
-        email: John@yahoo.com
-        password: healthy
+        name: Samuel Jackson
+        email: samuel@yahoo.com
+        password: secret
     AddDoctorRequest:
       title: AddDoctorRequest
       required:
@@ -491,10 +501,10 @@ components:
           type: integer
           format: int32
       example:
-        nama: dr.John Windell
-        waktu: sore
-        poli: Anak
-        hari: Minggu ke-1 dan ke-3
+        nama: dr.Samuel Jackson
+        waktu: pagi
+        poli: Umum
+        hari: Minggu ke-2 dan ke-4
         jam: Pkl 09.00 s/d 10.00 WIB
         gender: 1
         on_call: 1
@@ -502,27 +512,34 @@ components:
       title: UpdateDoctorRequest
       required:
         - waktu
+        - poli
         - hari
         - jam
+        - gender
         - on_call
       type: object
       properties:
         waktu:
           type: string
+        poli:
+          type: string
         hari:
           type: string
         jam:
           type: string
+        gender:
+          type: boolean
         on_call:
-          type: integer
-          format: int32
+          type: boolean
       example:
-        waktu: pagi
-        hari: Minggu
-        jam: Pkl 09.00 WIB
-        on_call: 1
-    AddVacancyRequest:
-      title: AddVacancyRequest
+        waktu: sore
+        poli: Kulit Kelamin
+        hari: Senin, Rabu dan Jum'at
+        jam: Pkl 16.00 s/d 18.00 WIB
+        gender: false
+        on_call: false
+    AddJobRequest:
+      title: AddJobRequest
       required:
         - title
         - pengalaman
@@ -547,8 +564,8 @@ components:
           - Pernah bekerja di klinik gigi sebagai perawat gigi
           - Minimal lulusan smk/sma
           - Untuk melakukan asistensi dokter gigi
-    UpdateVacancyRequest:
-      title: UpdateVacancyRequest
+    UpdateJobRequest:
+      title: UpdateJobRequest
       required:
         - title
         - pengalaman
@@ -585,8 +602,8 @@ components:
         password:
           type: string
       example:
-        email: John@yahoo.com
-        password: patient
+        email: samuel@gmail.com
+        password: secret
     RegisterPatientRequest:
       title: RegisterPatientRequest
       required:
@@ -617,12 +634,12 @@ components:
           type: integer
           format: int32
       example:
-        name: John windell
-        email: John@yahoo.com
-        password: patient
+        name: Samuel Jackson
+        email: samuel@yahoo.com
+        password: secret
         gender: 0
         age: 42
-        address: Jl. Simply Healthy No 5
+        address: Jl. Way Sekampung no 6
         phone: 2342332
     UpdatePatientDataRequest:
       title: UpdatePatientDataRequest
@@ -636,8 +653,8 @@ components:
         address:
           type: string
       example:
-        password: patient
-        address: Jl. Simply Healthy No.5
+        password: password
+        address: Jl. Way Sekampung 95
   securitySchemes:
     bearer:
       type: http
@@ -646,13 +663,11 @@ security: []
 tags:
   - name: Misc
     description: ""
-  - name: Admin
+  - name: Administration
     description: ""
-  - name: Doctors
+  - name: Doctor
     description: ""
-  - name: Vacancy
+  - name: Job
     description: ""
-  - name: Patient Authorization
-    description: ""
-  - name: Patient Data
+  - name: Patient
     description: ""
