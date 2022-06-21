@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const connectDB = require("./db/connect");
-const path = require("path");
 
 const patientDataRouter = require("./routes/patientdata");
 const patientRouter = require("./routes/patients");
@@ -12,7 +11,8 @@ const vacancyRoute = require("./routes/vacancies");
 const errorHandlerMiddleware = require("./middlewares/error-handler");
 const notFoundMiddleware = require("./middlewares/not-found");
 const authenticationMiddleware = require("./middlewares/authentication");
-const adminAuthentificationMiddleware = require("./middlewares/adminauthentification");
+
+const bodyParser = require("body-parser");
 
 const helmet = require("helmet");
 const cors = require("cors");
@@ -22,6 +22,7 @@ const rateLimiter = require("express-rate-limit");
 /* ---------------------------- swagger --------------------------- */
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
+const facilityRoutes = require("./routes/facilities");
 const swaggerDocument = YAML.load("./swagger.yaml");
 /* ---------------------------- swagger --------------------------- */
 
@@ -40,10 +41,12 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 /* --------------------------- security --------------------------- */
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.set("view engine", "ejs");
+
 app.use(express.static("public"));
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./public/index.html"));
-// });
 
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
@@ -52,7 +55,7 @@ app.use("/api/v1/patientdata", authenticationMiddleware, patientDataRouter);
 app.use("/api/v1/admin", adminrouter);
 app.use("/api/v1/doctors", doctorroute);
 app.use("/api/v1/jobs", vacancyRoute);
-
+app.use("/api/v1/facilities", facilityRoutes);
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 

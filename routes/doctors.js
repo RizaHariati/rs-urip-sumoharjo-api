@@ -1,6 +1,6 @@
 const express = require("express");
 const {
-  getDoctors,
+  searchDoctors,
   addDoctor,
   updateDoctor,
   deleteDoctor,
@@ -10,7 +10,7 @@ const adminAuthentificationMiddleware = require("../middlewares/adminauthentific
 
 const doctorroute = express.Router();
 
-doctorroute.get("/", getDoctors);
+doctorroute.get("/", searchDoctors);
 doctorroute.get("/:id", getDoctorStatic);
 
 doctorroute.use("/admin", adminAuthentificationMiddleware);

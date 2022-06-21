@@ -19,6 +19,8 @@
 .banner {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   background: white;
   padding-block: 15px;
@@ -28,6 +30,21 @@
 }
 .title {
   margin-inline: auto;
+}
+
+.logo-image-container {
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  border-radius: 100%;
+}
+
+.logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 a {

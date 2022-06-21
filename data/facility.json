@@ -1,0 +1,150 @@
+[
+  {
+    "title": "Magnetic resonance imaging (MRI)",
+    "original": "mri5",
+    "info": [
+      "Merupakan pemeriksaan organ tubuh yang dilakukan dengan menggunakan teknologi magnet dan gelombang radio."
+    ],
+    "category": "unggulan"
+  },
+  {
+    "title": "Vitrektomy",
+    "original": "vitrektomy",
+    "info": [
+      "Vitrektomy adalah operasi untuk rnenghilangkan badan kaca atau vitreus (jelly bening seperti kaca) dari dalam bola mata."
+    ],
+    "category": "unggulan"
+  },
+  {
+    "title": "Endoscopy",
+    "original": "endoscopy_1",
+    "info": [
+      "Mesin endoscopy digunakan untuk tindakan endoscopy diagnostic baik saluran cerna bagian atas maupun bagian bawah."
+    ],
+    "category": "unggulan"
+  },
+  {
+    "title": "CT Scan 16 Slice",
+    "original": "ct-scan",
+    "info": [
+      "Fasilitas radiologi yang canggih ditangani oleh tenaga medis dan paramedis yang terlatih dan berpengalaman di bidangnya  "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Instalasi Gawat Darurat (24 Jam)",
+    "original": "icu",
+    "info": [
+      "Menyediakan penanganan awal bagi pasien yang menderita sakit dan cedera, yang dapat mengancam kelangsungan hidupnya.",
+
+      "Selalu siaga dokter dari berbagai spesialisasi bersama sejumlah perawat dan dokter jaga, memberikan pelayanan awal 24 jam sehari, 7 hari seminggu."
+    ],
+    "category": "rawat-jalan"
+  },
+  {
+    "title": "Poli. Bedah Umum",
+    "original": "bedahUmum",
+    "info": [
+      "Menyediakan Ahli bedah umum dapat mendiagnosa beberapa jenis penyakit, terkait dengan perut dan organ-organ yang terhubung. ",
+
+      "Juga mengobati pasien luka bakar"
+    ],
+    "category": "rawat-jalan"
+  },
+  {
+    "title": "Endoscopy THT",
+    "original": "endoscopy-tht",
+    "info": [
+      "Mendeteksi penyakit yang terjadi pada organ yang terkait dengan telinga, hidung, dan tenggorokan. Ini termasuk dengan bronkus, esofagus, dan laring. ",
+
+      "Juga digunakan untuk melakukan pemeriksaan meluruh pada sinus dan polip"
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Oto Acoustic Emission OAE",
+    "original": "oae_1",
+    "info": [
+      "Skrining (deteksi dini) atau tes pendengaran bayi baru lahir yang menangkap emisi pada koklea. "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Audiometri",
+    "original": "audiometri",
+    "info": [
+      "Audiometri adalah pemeriksaan untuk mengevaluasi fungsi pendengaran.  "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Timpanometri",
+    "original": "timponometri",
+    "info": [
+      "Timpanometri adalah pemeriksaan telinga yang berguna untuk menentukan keadaan di telinga tengah.  "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Brain Evoked Response Auditory (BERA)",
+    "original": "bera",
+    "info": ["Pemeriksaan untuk melihat ambang dengar pada telinga anak.  "],
+    "category": "poliklinik"
+  },
+  {
+    "title": "UltraSonoGrafi (USG 3D)",
+    "original": "usg",
+    "info": [
+      "Digunakan dalam pemeriksaan organ abdomen (ginjal, buli-buli, prostat, hepar, lien, gallblader, payudara dan pembuluh darah pada extremitas atas I bawah)  "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Digital Radiography",
+    "original": "dradiologi",
+    "info": [
+      "Radiografi digital adalah bentuk radiografi yang menggunakan pelat yang peka terhadap sinar x untuk secara langsung menangkap data selama pemeriksaan pasien, segera mentransfernya ke sistem komputer tanpa menggunakan kaset perantara."
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Echo Cardiogram (USG Jantung)",
+    "original": "echocardiogram",
+    "info": [
+      "Melihat gelombang gelombang frekuensi yang disebut ultrasound dari bilik-bilik jantung. "
+    ],
+    "category": "poliklinik"
+  },
+  {
+    "title": "Farmasi",
+    "original": "farmasi",
+    "info": [
+      "Dibawah pimpinan apoteker yang kompeten siap menyediakan obat-obatan untuk unit perawatan dan bidang – bidang lain"
+    ],
+    "category": "penunjang-klinik"
+  },
+  {
+    "title": "Instalasi Gizi",
+    "original": "instalasi-gizi",
+    "info": [
+      "Memberikan pelayanan gizi yang penting untuk mempercepat proses penyembuhan terhadap pasien"
+    ],
+    "category": "penunjang-klinik"
+  },
+  {
+    "title": "Ruang Operasi",
+    "original": "ruang-operasi",
+    "info": [
+      "Ruang Operasi RS Urip Sumoharjo adalah salah satu fasilitas rumah sakit yg dirancang sesuai dengan standar akreditasi RS dengan konsep lingkungan yg aman dan nyaman yang dilengkapi dengan fasilitas modern serta tim dokter dan tenaga paramedis yg profesional dan kompeten."
+    ],
+    "category": "penunjang-klinik"
+  },
+  {
+    "title": "Laboratorium",
+    "original": "laboratorium",
+    "info": [
+      "Laboratorium Urip Sumoharjo merupakan fasilitas pelayanan kesehatan yang melaksanakan pengukuran, penetapan dan pengujian untuk penentuan jenis penyakit, penyebab penyakit, dan kondisi kesehatan. Unit laboratorium RS Urip Sumoharjo memberikan pelayanan 24 jam dan sudah mendapatkan sertifikasi international, ISO 9002."
+    ],
+    "category": "penunjang-klinik"
+  }
+]

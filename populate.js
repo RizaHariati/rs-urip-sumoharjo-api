@@ -1,22 +1,23 @@
 require("dotenv").config();
 const connectDB = require("./db/connect");
-const Advertisement = require("./models/Advertisement");
 const Doctor = require("./models/Doctor");
 const Vacancy = require("./models/Vacancy");
+const Facility = require("./models/Facility");
 
-const advertisementdb = require("./data/advertisement.json");
+const facilitydb = require("./data/facility.json");
 const doctordb = require("./data/doctordb.json");
 const vacancydb = require("./data/vacancy.json");
-const { CustomAPIError } = require("./error");
+
 const start = async () => {
   try {
     connectDB(process.env.MONGO_URI);
-    await Advertisement.deleteMany();
-    await Vacancy.deleteMany();
-    await Doctor.deleteMany();
-    await Advertisement.create(advertisementdb);
-    await Vacancy.create(vacancydb);
-    await Doctor.create(doctordb);
+    await Facility.deleteMany();
+    // await Vacancy.deleteMany();
+    // await Doctor.deleteMany();
+
+    await Facility.create(facilitydb);
+    // await Vacancy.create(vacancydb);
+    // await Doctor.create(doctordb);
     console.log(
       "advertisement, vacancy, and doctor database are already populated"
     );

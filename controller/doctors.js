@@ -2,7 +2,7 @@ const { StatusCodes } = require("http-status-codes");
 const { BadRequestError, CustomAPIError, NotFoundError } = require("../error");
 const Doctor = require("../models/Doctor");
 
-const getDoctors = async (req, res, next) => {
+const searchDoctors = async (req, res, next) => {
   const { nama, poli } = req.query;
   let queryObject = {};
   if (nama) {
@@ -13,6 +13,9 @@ const getDoctors = async (req, res, next) => {
   }
 
   const allDoctors = await Doctor.find(queryObject);
+  if (!allDoctors) {
+    return next(new NotFoundError("No doctor is found"));
+  }
   res.status(StatusCodes.OK).json({ total: allDoctors.length, allDoctors });
 };
 
@@ -86,7 +89,7 @@ const deleteDoctor = async (req, res, next) => {
 };
 
 module.exports = {
-  getDoctors,
+  searchDoctors,
   getDoctorStatic,
   addDoctor,
   updateDoctor,
