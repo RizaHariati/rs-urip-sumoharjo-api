@@ -34,6 +34,7 @@ const createFacility = async (req, res, next) => {
   const img = { cloud_id: result.public_id, cloud_image: result.secure_url };
   try {
     const createFacility = await Facility.create({ ...req.body, img });
+    // return res.status(StatusCodes.ACCEPTED).json({ msg: "Okelah" });
     return res.status(StatusCodes.ACCEPTED).json({ facility: createFacility });
   } catch (error) {
     if (req.file) {
