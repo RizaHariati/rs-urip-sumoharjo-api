@@ -6,15 +6,24 @@ const {
   updateFacility,
   getFacility,
 } = require("../controller/facilities");
+const adminAuthentificationMiddleware = require("../middlewares/adminauthentification");
 const { upload } = require("../middlewares/upload");
 const facilityRoutes = express.Router();
 
 facilityRoutes.get("/", searchFacility);
-facilityRoutes.post("/", upload, createFacility);
-facilityRoutes.patch("/:id", upload, updateFacility);
-facilityRoutes
-  .route("/:id")
-  .delete(deleteFacility)
+facilityRoutes.post(
+  "/",
+  adminAuthentificationMiddleware,
+  upload,
+  createFacility
+);
+facilityRoutes.patch(
+  "/:id",
+  adminAuthentificationMiddleware,
+  upload,
+  updateFacility
+);
+facilityRoutes.delete("/:id", adminAuthentificationMiddleware, deleteFacility);
+facilityRoutes.get("/:id", getFacility);
 
-  .get(getFacility);
 module.exports = facilityRoutes;

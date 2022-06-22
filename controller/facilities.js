@@ -25,30 +25,20 @@ const searchFacility = async (req, res, next) => {
 };
 
 const createFacility = async (req, res, next) => {
+  let result = {};
+  if (req.file) {
+    result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "RSUripSumoharjo",
+    });
+  }
+  const img = { cloud_id: result.public_id, cloud_image: result.secure_url };
   try {
-    let result = {};
-    if (req.file) {
-      result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "RSUripSumoharjo",
-      });
-    } else {
-      const { original } = req.body || "";
-      const pathFile = path.join(
-        __dirname,
-        "..",
-        "/public/pelayanan-fasilitas/",
-        `${original}.jpg`
-      );
-
-      result = await cloudinary.uploader.upload(pathFile, {
-        folder: "RSUripSumoharjo",
-      });
-    }
-    const img = { cloud_id: result.public_id, cloud_image: result.secure_url };
-
     const createFacility = await Facility.create({ ...req.body, img });
     return res.status(StatusCodes.ACCEPTED).json({ facility: createFacility });
   } catch (error) {
+    if (req.file) {
+      await cloudinary.uploader.destroy(img.cloud_id);
+    }
     return next(error);
   }
 };
@@ -94,7 +84,11 @@ const updateFacility = async (req, res, next) => {
     data.img = img;
   }
   if (title) {
-    data.title = title;
+    if (title === facility.title) {
+      console.log(facility.title);
+    } else {
+      data.title = title;
+    }
   }
   if (info) {
     data.info = info;
@@ -127,3 +121,17 @@ module.exports = {
   updateFacility,
   getFacility,
 };
+
+//  else {
+//       const { original } = req.body || "";
+//       const pathFile = path.join(
+//         __dirname,
+//         "..",
+//         "/public/pelayanan-fasilitas/",
+//         `${original}.jpg`
+//       );
+
+//       result = await cloudinary.uploader.upload(pathFile, {
+//         folder: "RSUripSumoharjo",
+//       });
+//     }

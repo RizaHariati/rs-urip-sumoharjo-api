@@ -22,8 +22,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginAdminRequest"
             example:
-              email: samuel@yahoo.com
-              password: secret
+              email: riza@yahoo.com
+              password: passwordadmin
         required: true
       responses:
         "200":
@@ -46,9 +46,9 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterAdminRequest"
             example:
-              name: Samual Jackson
-              email: samuel@yahoo.com
-              password: secret
+              name: Riza Hariati
+              email: riza@yahoo.com
+              password: passwordadmin
         required: true
       responses:
         "200":
@@ -60,9 +60,9 @@ paths:
     get:
       tags:
         - Doctor
-      summary: Get Doctor
+      summary: Get Doctor by ID
       description: Get doctor by ID
-      operationId: GetDoctor
+      operationId: GetDoctorbyID
       parameters:
         - name: id
           in: path
@@ -82,7 +82,7 @@ paths:
       tags:
         - Doctor
       summary: Delete doctor
-      description: Delete doctor by Id
+      description: Delete doctor by Id. Administrator only
       operationId: Deletedoctor
       parameters:
         - name: id
@@ -149,7 +149,7 @@ paths:
             schema:
               $ref: "#/components/schemas/AddDoctorRequest"
             example:
-              nama: dr.Samuel Jackson
+              nama: dr.Riza Simanjuntak
               waktu: pagi
               poli: Umum
               hari: Minggu ke-2 dan ke-4
@@ -169,19 +169,9 @@ paths:
       tags:
         - Doctor
       summary: Search Doctor
-      description: Search doctor using 'nama' keyword or 'poli' keyword
+      description: Search doctor using 'nama' keyword or 'poli'  or get all doctors
       operationId: SearchDoctor
-      parameters:
-        - in: query
-          name: nama
-          schema:
-            type: string
-          description: Mencari dokter berdasarkan nama
-        - in: query
-          name: poli
-          schema:
-            type: string
-          description: Mencari dokter berdasarkan poli yang dituju
+      parameters: []
       responses:
         "200":
           description: ""
@@ -302,7 +292,7 @@ paths:
       tags:
         - Job
       summary: Get All Jobs
-      description: Get all Job Vacancy available
+      description: Get all Job vacancies available
       operationId: GetAllJobs
       parameters: []
       responses:
@@ -326,8 +316,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginPatientRequest"
             example:
-              email: samuel@gmail.com
-              password: secret
+              email: riza@gmail.com
+              password: password
         required: true
       responses:
         "200":
@@ -350,9 +340,9 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterPatientRequest"
             example:
-              name: Samuel Jackson
-              email: samuel@gmail.com
-              password: secret
+              name: Riza Simanjuntak
+              email: riza@yahoo.com
+              password: password
               gender: 0
               age: 42
               address: Jl. Way Sekampung no 6
@@ -369,7 +359,7 @@ paths:
       tags:
         - Patient
       summary: Delete Patient Data
-      description: Delete Patient, required patient login
+      description: Delete Patient, require patient login
       operationId: DeletePatientData
       parameters:
         - name: id
@@ -407,8 +397,8 @@ paths:
             schema:
               $ref: "#/components/schemas/UpdatePatientDataRequest"
             example:
+              password: password
               address: Jl. Way Sekampung 95
-              phone: 345829
         required: true
       responses:
         "200":
@@ -420,9 +410,9 @@ paths:
     get:
       tags:
         - Patient
-      summary: Patient Data
+      summary: Get Patient Data
       description: Get single patient Data, require patient login
-      operationId: PatientData
+      operationId: GetPatientData
       parameters:
         - name: id
           in: path
@@ -431,6 +421,145 @@ paths:
           style: simple
           schema:
             type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /facilities:
+    get:
+      tags:
+        - Facility
+      summary: Search Facility
+      description: Search facility by title or get all facilities
+      operationId: SearchFacility
+      parameters: []
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+    post:
+      tags:
+        - Facility
+      summary: Create new Facility
+      description: Create new facility. Administrator only.
+      operationId: CreatenewFacility
+      parameters: []
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - title
+                - info
+                - category
+                - img
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: Aduh aduh aduuuhh
+                info:
+                  type: string
+                  example: testing
+                category:
+                  type: string
+                  example: poliklinik
+                img:
+                  type: string
+        required: false
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+  /facilities/{id}:
+    get:
+      tags:
+        - Facility
+      summary: Get single Facility
+      description: Get single facility
+      operationId: GetsingleFacility
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security: []
+    delete:
+      tags:
+        - Facility
+      summary: Delete Facility
+      description: Delete a facility by id. Administrator only.
+      operationId: DeleteFacility
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+      responses:
+        "200":
+          description: ""
+          headers: {}
+      deprecated: false
+      security:
+        - bearer: []
+    patch:
+      tags:
+        - Facility
+      summary: Update Facility
+      description: Update a facility. Administrator only.
+      operationId: UpdateFacility
+      parameters:
+        - name: id
+          in: path
+          description: ""
+          required: true
+          style: simple
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - title
+                - category
+                - info
+                - img
+              type: object
+              properties:
+                title:
+                  type: string
+                  example: I will survive again
+                category:
+                  type: string
+                  example: rawat-jalan
+                info:
+                  type: string
+                  example: Melihat gelombang gelombang frekuensi yang disebut ultrasound dari bilik-bilik jantung.
+                img:
+                  type: string
+        required: false
       responses:
         "200":
           description: ""
@@ -452,8 +581,8 @@ components:
         password:
           type: string
       example:
-        email: samuel@yahoo.com
-        password: secret
+        email: riza@yahoo.com
+        password: passwordadmin
     RegisterAdminRequest:
       title: RegisterAdminRequest
       required:
@@ -469,9 +598,9 @@ components:
         password:
           type: string
       example:
-        name: Samuel Jackson
-        email: samuel@yahoo.com
-        password: secret
+        name: Riza Hariati
+        email: riza@yahoo.com
+        password: passwordadmin
     AddDoctorRequest:
       title: AddDoctorRequest
       required:
@@ -501,7 +630,7 @@ components:
           type: integer
           format: int32
       example:
-        nama: dr.Samuel Jackson
+        nama: dr.Riza Simanjuntak
         waktu: pagi
         poli: Umum
         hari: Minggu ke-2 dan ke-4
@@ -602,8 +731,8 @@ components:
         password:
           type: string
       example:
-        email: samuel@gmail.com
-        password: secret
+        email: riza@gmail.com
+        password: password
     RegisterPatientRequest:
       title: RegisterPatientRequest
       required:
@@ -634,9 +763,9 @@ components:
           type: integer
           format: int32
       example:
-        name: Samuel Jackson
-        email: samuel@yahoo.com
-        password: secret
+        name: Riza Simanjuntak
+        email: riza@yahoo.com
+        password: password
         gender: 0
         age: 42
         address: Jl. Way Sekampung no 6
@@ -670,4 +799,6 @@ tags:
   - name: Job
     description: ""
   - name: Patient
+    description: ""
+  - name: Facility
     description: ""
