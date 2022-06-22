@@ -22,8 +22,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginAdminRequest"
             example:
-              email: riza@yahoo.com
-              password: passwordadmin
+              email: samuel@yahoo.com
+              password: secret
         required: true
       responses:
         "200":
@@ -46,9 +46,9 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterAdminRequest"
             example:
-              name: Riza Hariati
-              email: riza@yahoo.com
-              password: passwordadmin
+              name: Samual Jackson
+              email: samuel@yahoo.com
+              password: secret
         required: true
       responses:
         "200":
@@ -149,7 +149,7 @@ paths:
             schema:
               $ref: "#/components/schemas/AddDoctorRequest"
             example:
-              nama: dr.Riza Simanjuntak
+              nama: dr.Samuel Jackson
               waktu: pagi
               poli: Umum
               hari: Minggu ke-2 dan ke-4
@@ -171,7 +171,17 @@ paths:
       summary: Search Doctor
       description: Search doctor using 'nama' keyword or 'poli'  or get all doctors
       operationId: SearchDoctor
-      parameters: []
+      parameters:
+        - in: query
+          name: nama
+          schema:
+            type: string
+          description: Mencari dokter berdasarkan nama
+        - in: query
+          name: poli
+          schema:
+            type: string
+          description: Mencari dokter berdasarkan poli yang dituju
       responses:
         "200":
           description: ""
@@ -316,8 +326,8 @@ paths:
             schema:
               $ref: "#/components/schemas/LoginPatientRequest"
             example:
-              email: riza@gmail.com
-              password: password
+              email: samuel@gmail.com
+              password: secret
         required: true
       responses:
         "200":
@@ -340,9 +350,9 @@ paths:
             schema:
               $ref: "#/components/schemas/RegisterPatientRequest"
             example:
-              name: Riza Simanjuntak
-              email: riza@yahoo.com
-              password: password
+              name: Samuel Jackson
+              email: samuel@gmail.com
+              password: secret
               gender: 0
               age: 42
               address: Jl. Way Sekampung no 6
@@ -397,8 +407,8 @@ paths:
             schema:
               $ref: "#/components/schemas/UpdatePatientDataRequest"
             example:
-              password: password
               address: Jl. Way Sekampung 95
+              phone: 345829
         required: true
       responses:
         "200":
@@ -435,7 +445,12 @@ paths:
       summary: Search Facility
       description: Search facility by title or get all facilities
       operationId: SearchFacility
-      parameters: []
+      parameters:
+        - in: query
+          name: title
+          schema:
+            type: string
+          description: Mencari Fasilitas berdasarkan nama
       responses:
         "200":
           description: ""
@@ -463,10 +478,10 @@ paths:
               properties:
                 title:
                   type: string
-                  example: Aduh aduh aduuuhh
+                  example: Unit Gawat Darurat
                 info:
                   type: string
-                  example: testing
+                  example: Menyediakan penanganan awal bagi pasien yang menderita sakit dan cedera
                 category:
                   type: string
                   example: poliklinik
