@@ -4,22 +4,22 @@ const jwt = require("jsonwebtoken");
 const PatientSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "nama harus diisi"],
+    required: [true, " Nama harus diisi."],
     maxlength: 50,
     minlength: 3,
   },
   email: {
     type: String,
-    required: [true, "Email harus ada"],
+    required: [true, " Email harus ada."],
     match: [
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "format email salah",
     ],
-    unique: [true, "email sudah digunakan"],
+    unique: [true, " Email sudah digunakan."],
   },
   password: {
     type: String,
-    required: [true, "password harus diisi"],
+    required: [true, " Password harus diisi."],
     minlength: 6,
     max: 14,
   },
@@ -30,17 +30,17 @@ const PatientSchema = new mongoose.Schema({
   /* ------------------ gender male = 1, female = 0 ------------------ */
   age: {
     type: Number,
-    required: [true, "kolom harus diisi"],
+    required: [true, " Umur harus diisi"],
     min: 0,
     max: 110,
   },
   address: {
     type: String,
-    required: [true, "kolom harus diisi"],
+    required: [true, " Alamat harus diisi"],
   },
   phone: {
     type: Number,
-    required: [true, "kolom harus diisi"],
+    required: [true, " Telepon harus diisi"],
   },
 });
 

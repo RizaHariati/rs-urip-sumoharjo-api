@@ -19,9 +19,11 @@ const searchFacility = async (req, res, next) => {
   if (Object.keys(findFacility).length < 1) {
     return next(new NotFoundError("No facility is found"));
   }
-  res
-    .status(StatusCodes.OK)
-    .json({ total: findFacility.length, facilities: findFacility });
+  res.status(StatusCodes.OK).json({
+    msg: "Facility data successfuly fetched",
+    total: findFacility.length,
+    facilities: findFacility,
+  });
 };
 
 const createFacility = async (req, res, next) => {
@@ -35,7 +37,9 @@ const createFacility = async (req, res, next) => {
   try {
     const createFacility = await Facility.create({ ...req.body, img });
     // return res.status(StatusCodes.ACCEPTED).json({ msg: "Okelah" });
-    return res.status(StatusCodes.ACCEPTED).json({ facility: createFacility });
+    return res
+      .status(StatusCodes.ACCEPTED)
+      .json({ msg: "New Facility is Added", facility: createFacility });
   } catch (error) {
     if (req.file) {
       await cloudinary.uploader.destroy(img.cloud_id);
@@ -102,7 +106,7 @@ const updateFacility = async (req, res, next) => {
     runValidators: true,
   });
 
-  res.status(StatusCodes.OK).json({ data });
+  res.status(StatusCodes.OK).json({ msg: "Facility is updated", data });
 };
 
 const getFacility = async (req, res, next) => {
@@ -112,7 +116,9 @@ const getFacility = async (req, res, next) => {
   if (!facility) {
     return next(new NotFoundError("No facility with that id"));
   }
-  res.status(StatusCodes.OK).json({ facility });
+  res
+    .status(StatusCodes.OK)
+    .json({ msg: "Facility fetched successfully", facility });
 };
 
 module.exports = {

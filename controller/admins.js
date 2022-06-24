@@ -6,7 +6,9 @@ const registerAdmin = async (req, res, next) => {
   try {
     const adminData = await Admin.create({ ...req.body });
     const token = await adminData.createJWT();
-    res.status(StatusCodes.ACCEPTED).json({ token, adminData });
+    res
+      .status(StatusCodes.ACCEPTED)
+      .json({ msg: "Registration successful", token, adminData });
   } catch (error) {
     return next(error);
   }

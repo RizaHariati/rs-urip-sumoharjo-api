@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const VacancySchema = new mongoose.Schema({
   title: {
     type: String,
-    required: [true, "Judul pekerjaan tidak boleh kosong"],
+    required: [true, "Judul pekerjaan tidak boleh kosong."],
   },
   tanggal: {
     type: Date,
@@ -11,13 +11,13 @@ const VacancySchema = new mongoose.Schema({
   },
   pengalaman: {
     type: Number,
-    required: [true, "Masukkan jumlah tahun pengalaman kerja "],
+    required: [true, " Masukkan jumlah tahun pengalaman kerja. "],
   },
   kualifikasi: {
     type: Array,
     validate: {
       validator: (v) => Array.isArray(v) && v.length > 1,
-      message: "Kualifikasi harus diisi minimal 2",
+      message: " Kualifikasi harus diisi minimal 2.",
     },
   },
 });

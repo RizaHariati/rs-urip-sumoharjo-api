@@ -16,7 +16,11 @@ const searchDoctors = async (req, res, next) => {
   if (!allDoctors) {
     return next(new NotFoundError("No doctor is found"));
   }
-  res.status(StatusCodes.OK).json({ total: allDoctors.length, allDoctors });
+  res.status(StatusCodes.OK).json({
+    msg: "Data successfully fetched",
+    total: allDoctors.length,
+    allDoctors,
+  });
 };
 
 const getDoctorStatic = async (req, res, next) => {
@@ -32,12 +36,13 @@ const addDoctor = async (req, res, next) => {
   const { nama } = req.body;
 
   const doctor = await Doctor.findOne({ nama });
-  if (doctor) return next(new BadRequestError("Nama sudah ada dalam list"));
+  if (doctor)
+    return next(new BadRequestError("Name is already existed in database"));
   try {
     const createDoctor = await Doctor.create({ ...req.body });
     res
       .status(StatusCodes.OK)
-      .json({ msg: `${nama} sudah ditambahkan`, doctor: createDoctor });
+      .json({ msg: `${nama} is added to database`, doctor: createDoctor });
   } catch (error) {
     return next(error);
   }

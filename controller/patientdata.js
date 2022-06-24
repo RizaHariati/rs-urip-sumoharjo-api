@@ -11,7 +11,9 @@ const getPatientData = async (req, res, next) => {
   }
   try {
     const findPatient = await patient.findOne({ _id: patientID });
-    res.status(StatusCodes.OK).json({ findPatient });
+    res
+      .status(StatusCodes.OK)
+      .json({ msg: "Data successfully fetched", patient: findPatient });
     if (!findPatient) {
     }
   } catch (error) {

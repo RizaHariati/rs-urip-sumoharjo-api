@@ -3,8 +3,8 @@ const mongoose = require("mongoose");
 const DoctorSchema = new mongoose.Schema({
   nama: {
     type: String,
-    required: [true, " nama tidak boleh kosong"],
-    unique: [true, "sudah ada dokter dengan nama yang sama"],
+    required: [true, " Nama tidak boleh kosong."],
+    unique: [true, "Sudah ada dokter dengan nama yang sama"],
   },
   waktu: {
     type: String,
@@ -14,15 +14,15 @@ const DoctorSchema = new mongoose.Schema({
   },
   poli: {
     type: String,
-    required: [true, " poli tidak boleh kosong"],
+    required: [true, " Poli tidak boleh kosong."],
   },
   hari: {
     type: String,
-    required: [true, " hari tidak boleh kosong"],
+    required: [true, " Hari tidak boleh kosong."],
   },
   jam: {
     type: String,
-    required: [true, "jam tidak boleh kosong"],
+    required: [true, " Jam tidak boleh kosong."],
   },
 
   gender: {

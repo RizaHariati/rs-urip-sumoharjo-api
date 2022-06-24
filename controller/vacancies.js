@@ -7,13 +7,19 @@ const getAllVacancy = async (req, res, next) => {
   if (!vacancies) {
     return next(new NotFoundError("No Vacancy found"));
   }
-  res.status(StatusCodes.ACCEPTED).json({ total: vacancies.length, vacancies });
+  res.status(StatusCodes.ACCEPTED).json({
+    msg: "Data is successfully fetched",
+    total: vacancies.length,
+    vacancies,
+  });
 };
 
 const createVacancy = async (req, res, next) => {
   try {
     const vacancy = await Vacancy.create({ ...req.body });
-    res.status(StatusCodes.ACCEPTED).json({ vacancy });
+    res
+      .status(StatusCodes.ACCEPTED)
+      .json({ msg: "New vacancy is created", vacancy });
   } catch (error) {
     return next(error);
   }
@@ -25,7 +31,10 @@ const getVacancy = async (req, res, next) => {
   if (!vacancy) {
     return next(new NotFoundError("Vacancy with that id is not found"));
   }
-  res.status(StatusCodes.ACCEPTED).json({ vacancy });
+  res.status(StatusCodes.ACCEPTED).json({
+    msg: "Data is successfully fetched",
+    vacancy,
+  });
 };
 
 const updateVacancy = async (req, res, next) => {

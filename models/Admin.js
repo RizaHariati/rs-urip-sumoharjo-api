@@ -5,22 +5,22 @@ const jwt = require("jsonwebtoken");
 const AdminSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "nama harus diisi"],
+    required: [true, " Nama harus diisi."],
     maxlength: 50,
     minlength: 3,
   },
   email: {
     type: String,
-    required: [true, "Email harus ada"],
+    required: [true, " Email harus ada."],
     match: [
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
       "format email salah",
     ],
-    unique: [true, "email sudah digunakan"],
+    unique: [true, " Email sudah digunakan."],
   },
   password: {
     type: String,
-    required: [true, "password harus diisi"],
+    required: [true, " Password harus diisi."],
     minlength: 6,
     max: 14,
   },
